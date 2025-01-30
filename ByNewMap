@@ -1,0 +1,18 @@
+using UnityEngine;
+using UnityEngine.UI;
+
+public class ByNewMap : MonoBehaviour
+{
+
+   public Text CountCoins;
+   
+   public void BuyMap(int price)
+   {
+      if (PlayerPrefs.GetInt("CarCoins") >= price)
+      {
+         PlayerPrefs.SetInt("CarCoins", PlayerPrefs.GetInt("CarCoins") - price);
+         PlayerPrefs.SetString("NowMap", "Cyber");
+         CountCoins.text = PlayerPrefs.GetInt("CarCoins").ToString();
+      }
+   }
+}
