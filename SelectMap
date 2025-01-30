@@ -1,0 +1,15 @@
+using UnityEngine;
+
+public class SelectMap : MonoBehaviour
+{
+
+    public GameObject city, cyber;
+
+    void Start()
+    {
+        if(PlayerPrefs.GetString("NomMap") == "Cyber")
+            cyber.SetActive(true);
+        else
+            city.SetActive(true);
+    }
+}
